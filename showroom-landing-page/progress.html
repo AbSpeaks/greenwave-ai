@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenWave AI — Solution Architecture & Workflow</title>
+  <meta name="description" content="GreenWave AI three-phase solution architecture: passive telemetry ingestion, computational physics processing, and autonomous edge actuation — zero hardware footprint." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Blueprint Page Specific Styles ─────────────────────────────────────── */
+    .flow-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 60px;
+    }
+
+    .flow-phase {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-bottom: none;
+      background: var(--bg);
+      transition: background 0.3s;
+    }
+    .flow-phase:last-child { border-bottom: 1px solid var(--border); }
+    .flow-phase:hover { background: var(--bg-elevated); }
+
+    .flow-phase__index {
+      border-right: 1px solid var(--border);
+      padding: 44px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .flow-phase__num {
+      font-family: var(--mono);
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--border);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      transition: color 0.3s;
+    }
+    .flow-phase:hover .flow-phase__num { color: var(--green-mid); }
+
+    .flow-phase__tag {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      color: var(--green);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* Connector arrow between phases */
+    .flow-connector {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      position: relative;
+    }
+    .flow-connector::before {
+      content: '';
+      position: absolute;
+      left: 110px; /* aligned with phase index column center */
+      top: 0; bottom: 0;
+      width: 1px;
+      background: var(--green);
+      opacity: 0.35;
+    }
+    .flow-connector::after {
+      content: '▼';
+      position: absolute;
+      left: 102px;
+      bottom: 4px;
+      font-size: 0.65rem;
+      color: var(--green);
+      opacity: 0.5;
+    }
+
+    .flow-phase__body {
+      padding: 44px 48px;
+    }
+
+    .flow-phase__title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+
+    .flow-phase__subtitle {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--green);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .flow-phase__desc {
+      font-size: 0.93rem;
+      color: var(--gray-1);
+      line-height: 1.8;
+      font-weight: 300;
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .flow-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--border);
+      max-width: 560px;
+    }
+
+    .flow-input-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+    }
+    .flow-input-row:last-child { border-bottom: none; }
+
+    .flow-input-row__key {
+      padding: 10px 14px;
+      color: var(--green);
+      border-right: 1px solid var(--border);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .flow-input-row__val {
+      padding: 10px 16px;
+      color: var(--gray-1);
+      letter-spacing: 0.04em;
+    }
+
+    .flow-constraint {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--gray-2);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 16px;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+    }
+    .flow-constraint::before {
+      content: '◆';
+      color: var(--green);
+      font-size: 0.5rem;
+    }
+
+    /* System boundary line */
+    .system-boundary {
+      border: 1px solid var(--border-mid);
+      padding: 20px 28px;
+      margin-top: 56px;
+      background: var(--bg-surface);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .system-boundary__label {
+      font-family: var(--mono);
+      font-size: 0.67rem;
+      color: var(--green);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .system-boundary__items {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .system-boundary__item {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--gray-2);
+      letter-spacing: 0.06em;
+    }
+    .system-boundary__item span { color: var(--green); margin-right: 6px; }
+  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <div id="canvas-container" aria-hidden="true"><canvas id="bg-canvas"></canvas></div>
+
+  <header id="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="GreenWave AI">
+        <img src="assets/logo.jpg" alt="GW" class="logo-img" />
+        <span>GreenWave AI</span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="approach.html">Physics Engine</a></li>
+          <li><a href="mission.html">Mission</a></li>
+          <li><a href="progress.html" class="active">Architecture</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="nav-cta">Intake Channels</a>
+    </div>
+  </header>
+
+  <main class="section" style="padding-top: calc(var(--nav-h) + 80px); position: relative; z-index: 1;">
+    <div class="container">
+
+      <span class="eyebrow">SOLUTION_ARCHITECTURE :: Real-World Deployment Sequence</span>
+      <h1 class="subhead">Solution Architecture &amp; Workflow</h1>
+      <p class="meta" style="margin-top: 18px; margin-bottom: 12px;">
+        A precise, three-phase operational pipeline. No simulated counters. No dummy charts. This is the exact mechanical sequence GreenWave AI executes against live municipal infrastructure.
+      </p>
+
+      <!-- Three-Phase Linear Flowchart -->
+      <div class="flow-wrapper" role="list" aria-label="Three-phase architecture workflow">
+
+        <!-- Phase 01: Ingestion -->
+        <div class="flow-phase" role="listitem">
+          <div class="flow-phase__index">
+            <span class="flow-phase__num">01</span>
+            <span class="flow-phase__tag">INGESTION</span>
+          </div>
+          <div class="flow-phase__body">
+            <h2 class="flow-phase__title">Virtual Vector Ingestion</h2>
+            <p class="flow-phase__subtitle">Cloud-to-Cloud API Layer // Zero Physical Hardware Footprint</p>
+            <p class="flow-phase__desc">
+              The engine establishes secure, cloud-to-cloud API connections to ingest purely digital GPS telemetry vectors and global positioning data streams from city network systems. No physical hardware is touched, installed, or interfaced. All data sources are software endpoints—digital position vectors, movement timestamps, and network velocity states—consumed via encrypted API channels directly into the processing pipeline.
+            </p>
+            <div class="flow-inputs" aria-label="Input data sources">
+              <div class="flow-input-row">
+                <span class="flow-input-row__key">GPS_VECTORS</span>
+                <span class="flow-input-row__val">Digital GPS position &amp; velocity telemetry streams via city mobility APIs</span>
+              </div>
+              <div class="flow-input-row">
+                <span class="flow-input-row__key">CITY_API</span>
+                <span class="flow-input-row__val">Secure cloud-to-cloud network connections to municipal data endpoints</span>
+              </div>
+              <div class="flow-input-row">
+                <span class="flow-input-row__key">STREAM_TYPE</span>
+                <span class="flow-input-row__val">Purely digital — no physical sensor, camera, or loop dependency</span>
+              </div>
+              <div class="flow-input-row">
+                <span class="flow-input-row__key">OUTPUT</span>
+                <span class="flow-input-row__val">Normalized digital density vectors → Physics Engine input buffer</span>
+              </div>
+            </div>
+            <span class="flow-constraint">Zero Physical Hardware — 100% Pure Software Cloud Layer</span>
+          </div>
+        </div>
+
+        <div class="flow-connector" aria-hidden="true"></div>
+
+        <!-- Phase 02: Physics Processing -->
+        <div class="flow-phase" role="listitem">
+          <div class="flow-phase__index">
+            <span class="flow-phase__num">02</span>
+            <span class="flow-phase__tag">PHYSICS ENGINE</span>
+          </div>
+          <div class="flow-phase__body">
+            <h2 class="flow-phase__title">Computational Physics Processing</h2>
+            <p class="flow-phase__subtitle">Low-Latency Cloud Pipeline // LWR + MFD + Kinetic Models</p>
+            <p class="flow-phase__desc">
+              Incoming telemetry vectors are fed directly into the core computational physics pipeline running on reactive JVM cloud instances. The orchestration layer applies three simultaneous mathematical models in parallel: LWR fluid dynamics shockwave equations to calculate and predict compression wave formation; Macroscopic Fundamental Diagram (MFD) thermodynamic network modeling to track district-level saturation proximity; and kinetic energy conservation calculus to maintain freight corridor momentum across heavy transit vectors. All models converge into a unified signal override matrix within a sub-15ms processing window.
+            </p>
+            <div class="flow-inputs">
+              <div class="flow-input-row">
+                <span class="flow-input-row__key">LWR_MODEL</span>
+                <span class="flow-input-row__val">Lighthill-Whitham-Richards shockwave detection &amp; dissolution calculus</span>
+              </div>
+              <div class="flow-input-row">
+                <span class="flow-input-row__key">MFD_MODEL</span>
+                <span class="flow-input-row__val">Thermodynamic network saturation boundary pressure mapping</span>
+              </div>
+              <div class="flow-input-row">
+                <span class="flow-input-row__key">KE_MODEL</span>
+                <span class="flow-input-row__val">Freight corridor kinetic momentum preservation optimizer</span>
+              </div>
+              <div class="flow-input-row">
+                <span class="flow-input-row__key">LATENCY</span>
+                <span class="flow-input-row__val">&lt; 15ms end-to-end processing window per optimization cycle</span>
+              </div>
+            </div>
+            <span class="flow-constraint">No Consumer Dashboard — No User Interface Layer — Pure Computation</span>
+          </div>
+        </div>
+
+        <div class="flow-connector" aria-hidden="true"></div>
+
+        <!-- Phase 03: Actuation -->
+        <div class="flow-phase" role="listitem">
+          <div class="flow-phase__index">
+            <span class="flow-phase__num">03</span>
+            <span class="flow-phase__tag">ACTUATION</span>
+          </div>
+          <div class="flow-phase__body">
+            <h2 class="flow-phase__title">Autonomous Edge Actuation</h2>
+            <p class="flow-phase__subtitle">Secure Network Protocol // Sub-Millisecond Signal Override Dispatch</p>
+            <p class="flow-phase__desc">
+              The optimized signal timing matrix is pushed autonomously—without human intervention—directly back to city signal controllers via secured network protocol channels. Override commands dissolve detected traffic shockwaves before bottlenecks physically form, preserving kinetic momentum across freight corridors and maintaining each district's MFD state below critical saturation density. The cycle immediately repeats: continuous ingestion → continuous optimization → continuous actuation, running autonomously at city scale.
+            </p>
+            <div class="flow-inputs">
+              <div class="flow-input-row">
+                <span class="flow-input-row__key">PROTOCOL</span>
+                <span class="flow-input-row__val">Encrypted override dispatch via secured municipal network API channels</span>
+              </div>
+              <div class="flow-input-row">
+                <span class="flow-input-row__key">TARGETS</span>
+                <span class="flow-input-row__val">City signal controllers — direct API actuation, zero human relay</span>
+              </div>
+              <div class="flow-input-row">
+                <span class="flow-input-row__key">EFFECT</span>
+                <span class="flow-input-row__val">Shockwave dissolution + kinetic preservation + MFD boundary control</span>
+              </div>
+              <div class="flow-input-row">
+                <span class="flow-input-row__key">CYCLE</span>
+                <span class="flow-input-row__val">Continuous autonomous loop — no operator intervention required</span>
+              </div>
+            </div>
+            <span class="flow-constraint">Autonomous Operation — Zero Manual Signal Override Dependency</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- System Boundary Summary -->
+      <div class="system-boundary">
+        <span class="system-boundary__label">System Boundary</span>
+        <div class="system-boundary__items">
+          <span class="system-boundary__item"><span>◆</span>100% pure software</span>
+          <span class="system-boundary__item"><span>◆</span>Zero physical hardware</span>
+          <span class="system-boundary__item"><span>◆</span>Cloud-to-cloud API only</span>
+          <span class="system-boundary__item"><span>◆</span>Zero consumer UI layer</span>
+          <span class="system-boundary__item"><span>◆</span>Autonomous continuous loop</span>
+          <span class="system-boundary__item"><span>◆</span>&lt;15ms processing latency</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-copy">© 2026 GreenWave Technologies — Computational Urban Physics Engine</span>
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="index.html">Home</a>
+        <a href="approach.html">Physics Engine</a>
+        <a href="mission.html">Mission</a>
+        <a href="progress.html">Architecture</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/showroom-canvas.js"></script>
+</body>
+</html>

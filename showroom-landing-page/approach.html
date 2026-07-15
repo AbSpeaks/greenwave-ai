@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenWave AI — Physics Engine Architecture</title>
+  <meta name="description" content="Deep-dive into GreenWave AI's computational urban physics engine: fluid dynamics shockwave theory, kinetic energy conservation, and Macroscopic Fundamental Diagrams." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <div id="canvas-container" aria-hidden="true"><canvas id="bg-canvas"></canvas></div>
+
+  <header id="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="GreenWave AI">
+        <img src="assets/logo.jpg" alt="GW" class="logo-img" />
+        <span>GreenWave AI</span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="approach.html" class="active">Physics Engine</a></li>
+          <li><a href="mission.html">Mission</a></li>
+          <li><a href="progress.html">Architecture</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="nav-cta">Intake Channels</a>
+    </div>
+  </header>
+
+  <main class="section" style="padding-top: calc(var(--nav-h) + 80px); position: relative; z-index: 1;">
+    <div class="container">
+      <span class="eyebrow">PHYSICS_ENG :: Blueprint Specification</span>
+      <h1 class="subhead">Physics Engine Architecture</h1>
+      <p class="meta" style="margin-top: 20px;">
+        GreenWave is not a routing app. It is a cloud-native computational physics engine that applies fluid mechanics, thermodynamic network theory, and kinetic calculus to dissolve urban congestion at the mathematical layer.
+      </p>
+
+      <!-- Animated SVG Pipeline -->
+      <div class="pipeline-wrap">
+        <span class="pipeline-wrap__label">Real-Time Telemetry Data Flow Pipeline</span>
+        <svg class="pipeline-svg" viewBox="0 0 800 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="45" x2="800" y2="45" stroke="rgba(0,255,102,0.04)" stroke-width="1" />
+          <line x1="0" y1="90" x2="800" y2="90" stroke="rgba(0,255,102,0.04)" stroke-width="1" />
+          <line x1="0" y1="135" x2="800" y2="135" stroke="rgba(0,255,102,0.04)" stroke-width="1" />
+
+          <path d="M148 90 H296" stroke="rgba(0,255,102,0.18)" stroke-width="1.5" />
+          <path d="M416 90 H566" stroke="rgba(0,255,102,0.18)" stroke-width="1.5" />
+          <path class="pulse" d="M148 90 H296" stroke="#00FF66" stroke-width="1.5" />
+          <path class="pulse" d="M416 90 H566" stroke="#00FF66" stroke-width="1.5" />
+
+          <!-- Node 1: Source -->
+          <rect x="8" y="62" width="140" height="56" rx="2" fill="#0f1014" stroke="rgba(0,255,102,0.15)" />
+          <text x="22" y="86" fill="#00FF66" font-family="Space Mono" font-size="9" font-weight="700">INPUT SOURCE</text>
+          <text x="22" y="102" fill="#7A7D85" font-family="Space Grotesk" font-size="8.5">Digital GPS vectors / city APIs</text>
+          <circle cx="8" cy="90" r="3.5" fill="#00FF66" />
+
+          <!-- Node 2: Ingest -->
+          <rect x="296" y="62" width="120" height="56" rx="2" fill="#0f1014" stroke="rgba(0,255,102,0.12)" />
+          <text x="308" y="86" fill="#FFFFFF" font-family="Space Mono" font-size="9" font-weight="700">INGEST</text>
+          <text x="308" y="102" fill="#7A7D85" font-family="Space Grotesk" font-size="8.5">Time-series pipeline</text>
+
+          <!-- Node 3: Engine -->
+          <rect x="566" y="55" width="226" height="70" rx="2" fill="#0f1014" stroke="rgba(0,255,102,0.30)" />
+          <text x="580" y="82" fill="#00FF66" font-family="Space Mono" font-size="9" font-weight="700">PHYSICS ENGINE</text>
+          <text x="580" y="98" fill="#7A7D85" font-family="Space Grotesk" font-size="8.5">Shockwave dissolve / MFD calc</text>
+          <text x="580" y="113" fill="#7A7D85" font-family="Space Grotesk" font-size="8.5">Kinetic override dispatch</text>
+          <circle cx="792" cy="90" r="3.5" fill="#00FF66" />
+        </svg>
+      </div>
+
+      <!-- Three Physics Spec Cards -->
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-card__num">PHYSICS_ENG::01</span>
+          <h3>Fluid Dynamics &amp; Shockwave Dissolution</h3>
+          <p>
+            We model bumper-to-bumper traffic not as discrete vehicles but as compressible fluid flows propagating through urban conduits. The engine continuously calculates Lighthill-Whitham-Richards (LWR) wave equations to detect and dissolve traffic shockwaves—the invisible compression waves causing sudden braking—kilometres before they physically materialize.
+          </p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-card__num">PHYSICS_ENG::02</span>
+          <h3>Kinetic Energy Conservation</h3>
+          <p>
+            Every time a 40-tonne freight vehicle stops at a red signal, it wastes enormous kinetic energy reserves, amplifying city emissions and accelerating pavement wear. Our optimizer runs continuous momentum-preservation math across heavy freight vectors, calculating minimum-loss green windows to keep commercial corridors flowing at thermodynamically optimal velocities.
+          </p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-card__num">PHYSICS_ENG::03</span>
+          <h3>Macroscopic Fundamental Diagrams (MFD)</h3>
+          <p>
+            We apply thermodynamic network modeling at the district level to continuously identify the exact "tipping point" where a neighborhood transitions from fluid flow to absolute gridlock saturation. By monitoring MFD state-space coordinates in real-time, the engine dynamically adjusts macro-boundary control pressures to prevent critical density from being reached.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pure Software Deployment Statement -->
+      <div style="border: 1px solid var(--border); padding: 44px; margin-top: 1px; background: var(--bg-surface);">
+        <span class="eyebrow">Deployment Model</span>
+        <h2 class="subhead" style="font-size: 1.6rem; margin-bottom: 18px;">100% Pure Software Cloud Engine</h2>
+        <p class="meta">
+          GreenWave operates exclusively through cloud-to-cloud API connections and cloud-edge software overrides. The engine ingests purely digital GPS telemetry vectors and city network data streams via encrypted API channels—requiring no physical infrastructure, no embedded devices, and no hardware procurement of any kind. The entire operational stack runs in software.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-copy">© 2026 GreenWave Technologies — Computational Urban Physics Engine</span>
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="index.html">Home</a>
+        <a href="approach.html">Physics Engine</a>
+        <a href="mission.html">Mission</a>
+        <a href="progress.html">Architecture</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/showroom-canvas.js"></script>
+</body>
+</html>

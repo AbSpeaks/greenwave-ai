@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenWave AI — Secure Intake Channels</title>
+  <meta name="description" content="GreenWave AI secure intake channels for municipal pilot partnerships and core engineering recruitment applications." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <div id="canvas-container" aria-hidden="true"><canvas id="bg-canvas"></canvas></div>
+
+  <header id="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="GreenWave AI">
+        <img src="assets/logo.jpg" alt="GW" class="logo-img" />
+        <span>GreenWave AI</span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="approach.html">Physics Engine</a></li>
+          <li><a href="mission.html">Mission</a></li>
+          <li><a href="progress.html">Architecture</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="nav-cta">Intake Channels</a>
+    </div>
+  </header>
+
+  <main class="section" style="padding-top: calc(var(--nav-h) + 80px); position: relative; z-index: 1;">
+    <div class="container">
+      <span class="eyebrow">COMM_VECTOR :: Secured Transmission</span>
+      <h1 class="subhead">Secure Intake Channels</h1>
+      <p class="meta" style="margin-top: 20px; margin-bottom: 20px;">
+        GreenWave establishes deployment integrations with forward-thinking municipal infrastructure authorities and elite computational engineering talent. Select the appropriate intake channel below.
+      </p>
+
+      <div class="intake-grid">
+        <!-- Channel 1: Municipal -->
+        <div class="intake-panel">
+          <span class="eyebrow" style="margin-bottom: 14px;">Channel 01</span>
+          <h3>Municipal Partnership Intake</h3>
+          <p class="meta" style="font-size: 0.85rem; margin-bottom: 30px;">
+            Request pilot deployment specifications, operational network integration briefings, and access to complete system data sheets for municipal infrastructure authorities.
+          </p>
+          <form id="form-municipal" class="terminal-form">
+            <div class="form-field">
+              <label for="muni-org">MUNICIPAL_OR_INSTITUTIONAL_ORG</label>
+              <input type="text" id="muni-org" name="organization" required placeholder="e.g., Pune Municipal Corporation" />
+            </div>
+            <div class="form-field">
+              <label for="muni-rep">AUTHORIZED_REPRESENTATIVE</label>
+              <input type="text" id="muni-rep" name="representative" required placeholder="Full Name" />
+            </div>
+            <div class="form-field">
+              <label for="muni-email">EMAIL_SECURE_ENDPOINT</label>
+              <input type="email" id="muni-email" name="email" required placeholder="you@municipal.gov.in" />
+            </div>
+            <div class="form-field">
+              <label for="muni-notes">PILOT_PROPOSAL_ABSTRACT</label>
+              <textarea id="muni-notes" name="notes" rows="4" required placeholder="Describe target corridors, available city GPS data streams, API access scope, and pilot deployment timeline requirements..."></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="submit-municipal">TRANSMIT MUNICIPAL PACKET</button>
+          </form>
+        </div>
+
+        <!-- Channel 2: Engineering -->
+        <div class="intake-panel">
+          <span class="eyebrow" style="margin-bottom: 14px;">Channel 02</span>
+          <h3>Core Engineering Intake</h3>
+          <p class="meta" style="font-size: 0.85rem; margin-bottom: 30px;">
+            We are building the core distributed physics engine team. If you specialize in reactive concurrency, low-latency streaming pipelines, or mathematical network systems, transmit your profile.
+          </p>
+          <form id="form-engineering" class="terminal-form">
+            <div class="form-field">
+              <label for="eng-name">CANDIDATE_IDENTIFIER</label>
+              <input type="text" id="eng-name" name="name" required placeholder="Your full name" />
+            </div>
+            <div class="form-field">
+              <label for="eng-email">EMAIL_SECURE_ENDPOINT</label>
+              <input type="email" id="eng-email" name="email" required placeholder="you@developer.net" />
+            </div>
+            <div class="form-field">
+              <label for="eng-branch">SPECIALIZED_SYSTEMS_BRANCH</label>
+              <select id="eng-branch" name="branch">
+                <option value="concurrency">REACTIVE_CONCURRENCY_PIPELINES</option>
+                <option value="low-latency">LOW_LATENCY_STREAMING</option>
+                <option value="math">MATHEMATICAL_NETWORK_SYSTEMS</option>
+                <option value="physics">COMPUTATIONAL_PHYSICS_MODELING</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="eng-profile">ENGINEERING_PROFILE &amp; SYSTEMS_VECTORS</label>
+              <textarea id="eng-profile" name="profile" rows="4" required placeholder="Paste GitHub links, systems project abstracts, or outline your low-level concurrency and physics modeling experience..."></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="submit-engineering">TRANSMIT SYSTEMS APPLICATION</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-copy">© 2026 GreenWave Technologies — Computational Urban Physics Engine</span>
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="index.html">Home</a>
+        <a href="approach.html">Physics Engine</a>
+        <a href="mission.html">Mission</a>
+        <a href="progress.html">Architecture</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/showroom-canvas.js"></script>
+</body>
+</html>

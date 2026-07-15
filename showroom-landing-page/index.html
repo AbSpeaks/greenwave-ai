@@ -3,358 +3,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GreenWave — AI-Powered Traffic Optimization</title>
-  <meta name="description" content="GreenWave AI is developing a cloud-native software brain for traffic optimization in Indian cities. Continuous physics-based modeling using live GPS telemetry, zero heavy hardware." />
-  <meta name="keywords" content="AI traffic management, smart cities India, traffic pressure waves, GPS telemetry traffic, greenwave" />
-  <meta property="og:title" content="GreenWave — Traffic Optimization Platform" />
-  <meta property="og:description" content="Traffic is blind. We’re building the software brain. Zero-hardware. Cloud-native. Continuous physics." />
-  <meta property="og:type" content="website" />
-  <link rel="stylesheet" href="index.css" />
+  <title>GreenWave AI — Computational Urban Physics Engine</title>
+  <meta name="description" content="GreenWave AI is a cloud-native computational physics engine that models urban traffic as compressible fluid flows, dissolving shockwaves before they form." />
+  <meta name="keywords" content="GreenWave AI, traffic fluid dynamics, urban physics, shockwave dissipation, kinetic energy conservation, MFD, smart city engine" />
+  <link rel="stylesheet" href="css/main.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════════
-       NAVIGATION
-  ═══════════════════════════════════════════ -->
-  <nav id="navbar" aria-label="Main Navigation">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo" id="nav-logo-link" aria-label="GreenWave Home">
-        <img src="assets/logo.jpg" alt="GreenWave Logo" />
-        <span class="nav-brand">GreenWave</span>
+  <div id="canvas-container" aria-hidden="true"><canvas id="bg-canvas"></canvas></div>
+
+  <!-- NAVIGATION -->
+  <header id="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="GreenWave AI">
+        <img src="assets/logo.jpg" alt="GW" class="logo-img" />
+        <span>GreenWave AI</span>
       </a>
-
-      <ul class="nav-links" role="list">
-        <li><a href="#problem" id="nav-problem">The Challenge</a></li>
-        <li><a href="#solution" id="nav-solution">Our Approach</a></li>
-        <li><a href="#mission" id="nav-mission">Our Mission</a></li>
-      </ul>
-
-      <button class="nav-cta" id="nav-cta-btn" onclick="openModal('contact')">
-        Get in Touch
-      </button>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="approach.html">Physics Engine</a></li>
+          <li><a href="mission.html">Mission</a></li>
+          <li><a href="progress.html">Architecture</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="nav-cta" id="nav-intake-btn">Intake Channels</a>
     </div>
-  </nav>
+  </header>
 
-  <!-- ═══════════════════════════════════════════
-       HERO SECTION
-  ═══════════════════════════════════════════ -->
-  <section id="hero" aria-label="Introduction">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <div class="hero-eyebrow">
-          <span>Simulation Stage</span>
-          &nbsp;·&nbsp;
-          <span>Physics-Based Intelligence</span>
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero__content">
+          <span class="eyebrow">System Status: Physics Engine Active</span>
+          <h1 class="headline" id="hero-heading">
+            Traffic Is Blind.<br />
+            <span class="headline--accent">We Are The Software Brain.</span>
+          </h1>
+          <p class="meta" style="margin-top: 28px;">
+            GreenWave AI models urban traffic as a compressible fluid system—calculating and dissolving compression shockwaves kilometres before they form, operating as a 100% pure software cloud engine with zero physical infrastructure dependency.
+          </p>
+          <div class="btn-row" style="margin-top: 44px;">
+            <a href="approach.html" class="btn btn--solid" id="cta-examine">[ Examine Architecture ]</a>
+            <a href="contact.html" class="btn" id="cta-municipal">[ Municipal Intake ]</a>
+          </div>
         </div>
 
-        <h1 class="hero-title">
-          Traffic is Blind.<br />
-          <span class="highlight">We’re Building the Software Brain.</span>
-        </h1>
+        <!-- Physics Paradigm Pillars -->
+        <div class="hero__bottom">
+          <div class="hero__pillar">
+            <h3>// The Failure Mode</h3>
+            <p>Legacy traffic management relies on static physical controllers and rigid fixed-time infrastructure. Intersections remain completely blind to real-time micro-fluctuations. Upgrades cost hundreds of millions and create vendor lock-in.</p>
+          </div>
+          <div class="hero__pillar hero__pillar--lit">
+            <h3>// The Physics Override</h3>
+            <p>We model bumper-to-bumper flows as compressible urban fluid. Our engine applies Macroscopic Fundamental Diagrams, shockwave dissipation calculus, and kinetic energy conservation math to harmonize city corridors at cloud speed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <p class="hero-sub">
-          GreenWave AI is developing a cloud-native AI platform that predicts traffic pressure waves and clears congestion before it forms — using physics and live GPS data, without heavy hardware.
+    <!-- CORE INQUIRY TERMINAL -->
+    <section class="terminal-section section--sm" id="inquiry-terminal" aria-labelledby="terminal-heading">
+      <div class="container">
+        <span class="eyebrow">Interactive Architecture Query Interface</span>
+        <h2 class="subhead" id="terminal-heading">GreenWave Core Inquiry Subsystem</h2>
+        <p class="meta" style="margin-top: 16px; margin-bottom: 40px;">
+          Interrogate the architecture directly. Query our physics model, cloud telemetry stack, or validation framework.
         </p>
-
-        <div class="hero-actions">
-          <a href="#solution" class="btn-primary" id="hero-cta-approach">Explore Our Approach</a>
-          <button class="btn-ghost" id="hero-cta-founders" onclick="openModal('mission')">Talk to the Founders</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       THE PROBLEM SECTION
-  ═══════════════════════════════════════════ -->
-  <section id="problem" aria-label="The Challenge">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-text reveal">
-          <span class="section-eyebrow">The Context</span>
-          <h2 class="section-title">Indian Cities Are Losing the Battle Against Gridlock</h2>
-          <p class="section-desc">
-            Daily traffic jams in Pune, Mumbai, Bengaluru and other major cities waste time, fuel, and productivity. Traditional traffic lights run on outdated timers or reactive sensors. Hardware-based solutions are expensive, slow to deploy, and difficult to scale.
-          </p>
-        </div>
-        <div class="section-visual reveal reveal-delay-1">
-          <div class="photo-wrapper">
-            <img src="assets/traffic-problem.jpg" alt="Dense traffic congestion in an Indian city at dusk" class="problem-photo" />
-            <span class="photo-caption">Western Express Highway Traffic at Peak Hours</span>
+        <div class="terminal-wrap">
+          <div class="terminal-wrap__header">
+            <div class="terminal-wrap__dots"><span></span><span></span><span></span></div>
+            <span class="terminal-wrap__title">gw-core-inquiry-subsystem :: v2.1 // ACTIVE</span>
+          </div>
+          <div class="terminal-history" id="terminal-history" aria-live="polite">
+            <!-- Boot sequence injected by terminal.js -->
+          </div>
+          <div class="terminal-input-row">
+            <span class="terminal-prompt">ENGINEER ::</span>
+            <input
+              type="text"
+              id="terminal-input"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="Query the architecture..."
+              aria-label="Architecture query input"
+            />
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ═══════════════════════════════════════════
-       OUR SOLUTION SECTION
-  ═══════════════════════════════════════════ -->
-  <section id="solution" aria-label="Our Solution">
-    <div class="container">
-      <div class="section-grid reverse">
-        <div class="section-text reveal">
-          <span class="section-eyebrow">The Technology</span>
-          <h2 class="section-title">A Better Way: Pure Software Intelligence</h2>
-          <p class="section-desc">
-            GreenWave AI models traffic as a continuous physics-based system. By analyzing live GPS telemetry, our engine forecasts congestion 10-15 minutes in advance and proactively optimizes signal timings.
-          </p>
-
-          <div class="advantages-grid" role="list">
-            <div class="advantage-item" role="listitem">
-              <span class="advantage-bullet green"></span>
-              <div>
-                <h3>Zero heavy hardware dependency</h3>
-                <p>Integrates directly with existing GPS streams, eliminating the need for costly street-level installations.</p>
-              </div>
-            </div>
-            <div class="advantage-item" role="listitem">
-              <span class="advantage-bullet teal"></span>
-              <div>
-                <h3>Cloud-native and scalable</h3>
-                <p>Orchestrated centrally on modern cloud architecture, allowing simultaneous optimization of adjacent intersections.</p>
-              </div>
-            </div>
-            <div class="advantage-item" role="listitem">
-              <span class="advantage-bullet green"></span>
-              <div>
-                <h3>Faster & cost-effective deployment</h3>
-                <p>Rolls out city-wide in weeks instead of years of construction work and hardware lock-in.</p>
-              </div>
-            </div>
-            <div class="advantage-item" role="listitem">
-              <span class="advantage-bullet teal"></span>
-              <div>
-                <h3>Designed for real Indian city conditions</h3>
-                <p>Account for mixed vehicle flows, unlane-disciplined driving patterns, and sudden bottlenecks.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="section-visual reveal reveal-delay-1">
-          <div class="diagram-wrapper">
-            <h4 class="diagram-title">Physics-Based Continuous Flow Architecture</h4>
-            <!-- SVG Scientific Infographic Diagram -->
-            <svg class="solution-diagram" viewBox="0 0 480 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 40H480M0 90H480M0 140H480M0 190H480M0 240H480M0 290H480" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
-              <path d="M60 0V340M120 0V340M180 0V340M240 0V340M300 0V340M360 0V340M420 0V340" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
-
-              <rect x="20" y="30" width="130" height="50" rx="3" fill="#0C121C" stroke="rgba(20, 184, 166, 0.2)" stroke-width="1"/>
-              <text x="35" y="52" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="10" font-weight="600">LIVE GPS DATA STREAM</text>
-              <text x="35" y="66" fill="#94A3B8" font-family="Inter" font-size="8">Aggregated Telemetry</text>
-
-              <path d="M150 55H180" stroke="#14B8A6" stroke-width="1" stroke-dasharray="3 3"/>
-              <polygon points="180,55 175,52 175,58" fill="#14B8A6"/>
-
-              <rect x="180" y="30" width="140" height="50" rx="3" fill="#0C121C" stroke="rgba(34, 197, 94, 0.3)" stroke-width="1"/>
-              <text x="195" y="52" fill="#22C55E" font-family="Plus Jakarta Sans" font-size="10" font-weight="600">PHYSICS ENGINE</text>
-              <text x="195" y="66" fill="#94A3B8" font-family="Inter" font-size="8">Velocity/Pressure Wave modeling</text>
-
-              <path d="M195 72Q210 65 225 72T255 72T285 72" stroke="rgba(34, 197, 94, 0.3)" stroke-width="1" fill="none"/>
-
-              <path d="M320 55H350" stroke="#22C55E" stroke-width="1"/>
-              <polygon points="350,55 345,52 345,58" fill="#22C55E"/>
-
-              <rect x="350" y="30" width="110" height="50" rx="3" fill="#0C121C" stroke="rgba(20, 184, 166, 0.2)" stroke-width="1"/>
-              <text x="362" y="52" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="10" font-weight="600">FLOW PREDICTION</text>
-              <text x="362" y="66" fill="#94A3B8" font-family="Inter" font-size="8">10-15 Min Ahead</text>
-
-              <path d="M405 80V120H85V140" stroke="rgba(148, 163, 184, 0.15)" stroke-width="1"/>
-              <polygon points="85,140 82,135 88,135" fill="rgba(148, 163, 184, 0.15)"/>
-
-              <rect x="25" y="140" width="430" height="150" rx="3" fill="#090E16" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
-              
-              <path d="M40 180H440M40 240H440" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1"/>
-              <path d="M120 150V280M240 150V280M360 150V280" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1"/>
-
-              <path d="M50 240 C 100 240, 150 170, 200 240 S 300 240, 350 240" stroke="rgba(239, 68, 68, 0.5)" stroke-width="2" fill="none"/>
-              <text x="140" y="185" fill="#ef4444" font-family="Inter" font-size="7" font-weight="500">Predicted Pressure wave build-up</text>
-              
-              <path d="M50 240 C 100 240, 140 240, 200 240 S 260 215, 300 240" stroke="#22C55E" stroke-width="2" fill="none"/>
-              <text x="260" y="210" fill="#22C55E" font-family="Inter" font-size="7" font-weight="500">GreenWave Pre-emptive Flattening</text>
-
-              <text x="40" y="165" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="9" font-weight="600">HIGH-FIDELITY CITY-SCALE CORRELATION MATRIX</text>
-              <text x="40" y="275" fill="#94A3B8" font-family="Inter" font-size="8">Continuous optimization offsets congestion waves by adjusting signals in advance.</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       MISSION SECTION
-  ═══════════════════════════════════════════ -->
-  <section id="mission" aria-label="Our Mission">
-    <div class="container">
-      <div class="mission-wrapper reveal">
-        <span class="section-eyebrow" style="text-align:center;">The Purpose</span>
-        <h2 class="mission-heading">Our Mission</h2>
-        
-        <div class="mission-content">
-          <p class="mission-lead">
-            At GreenWave AI, we believe traffic congestion is a solvable engineering problem.
-          </p>
-          <p class="mission-body">
-            Our mission is to build the most intelligent traffic optimization platform for Indian cities — replacing expensive hardware with a lean, cloud-native software brain.
-          </p>
-          <p class="mission-body">
-            We want to save millions of hours, reduce pollution, improve safety, and make cities more livable.
-          </p>
-        </div>
-
-        <div class="stage-disclaimer" aria-label="Company Stage Transparency">
-          <div class="disclaimer-header">
-            <span class="disclaimer-dot"></span>
-            <h4>Current Stage: Simulation & Validation</h4>
-          </div>
-          <p>
-            We are currently running high-fidelity simulation trials on coordinate models of actual Indian junctions. The platform is actively generating optimization matrices using real-world traffic flows, laying the engineering groundwork for physical pilot deployments.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       CONTACT SECTION
-  ═══════════════════════════════════════════ -->
-  <section id="contact" aria-label="Contact Us">
-    <div class="container">
-      <div class="contact-box reveal">
-        <h2 class="contact-title">Ready to Transform Urban Mobility?</h2>
-        <p class="contact-desc">
-          If you’re an investor, developer, or smart cities professional who wants to be part of this journey — let’s talk.
-        </p>
-        <div class="contact-actions">
-          <button class="btn-primary" onclick="openModal('contact')">Get in Touch</button>
-          <button class="btn-ghost" onclick="openModal('mission')">Join the Mission</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════ -->
-  <footer id="footer" aria-label="Footer">
-    <div class="container footer-container">
-      <div class="footer-left">
-        <div class="footer-logo">
-          <img src="assets/logo.jpg" alt="GreenWave Logo" />
-          <span class="footer-logo-name">GreenWave</span>
-        </div>
-        <p class="footer-tagline">Building the software brain for city-scale traffic flow optimization.</p>
-      </div>
-      <div class="footer-right">
-        <p class="footer-copyright">
-          © 2026 GreenWave Technologies. All rights reserved. &nbsp;·&nbsp;
-          <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
-          <a href="#">Terms of Service</a>
-        </p>
-      </div>
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-copy">© 2026 GreenWave Technologies — Computational Urban Physics Engine</span>
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="index.html">Home</a>
+        <a href="approach.html">Physics Engine</a>
+        <a href="mission.html">Mission</a>
+        <a href="progress.html">Architecture</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </footer>
 
-  <!-- ═══════════════════════════════════════════
-       MODAL 1: GET IN TOUCH (CONTACT)
-  ═══════════════════════════════════════════ -->
-  <div id="modal-contact" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modal-contact-title">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeModal('contact')" aria-label="Close modal">&times;</button>
-      <h2 id="modal-contact-title" class="modal-title">Get in Touch</h2>
-      <p class="modal-desc">Send us a message and we'll get back to you shortly.</p>
-      
-      <form id="form-contact" onsubmit="handleFormSubmit(event, 'contact')">
-        <div class="form-group">
-          <label for="contact-name">Name</label>
-          <input type="text" id="contact-name" name="name" required placeholder="Your full name" />
-        </div>
-        <div class="form-group">
-          <label for="contact-email">Email</label>
-          <input type="email" id="contact-email" name="email" required placeholder="you@example.com" />
-        </div>
-        <div class="form-group">
-          <label for="contact-message">Message</label>
-          <textarea id="contact-message" name="message" rows="4" required placeholder="How can we help you?"></textarea>
-        </div>
-        <button type="submit" class="btn-primary form-submit-btn">Send Message</button>
-      </form>
-      <div id="success-contact" class="form-success-message" style="display: none;">
-        <h3>Message Sent</h3>
-        <p>Thank you for reaching out. We will get back to you as soon as possible.</p>
-        <button class="btn-ghost" style="margin-top: 16px; width: 100%;" onclick="closeModal('contact')">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       MODAL 2: JOIN THE MISSION (FOUNDERS / MISSION)
-  ═══════════════════════════════════════════ -->
-  <div id="modal-mission" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modal-mission-title">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeModal('mission')" aria-label="Close modal">&times;</button>
-      <h2 id="modal-mission-title" class="modal-title">Join the Mission</h2>
-      <p class="modal-desc">Connect directly with the founders of GreenWave AI.</p>
-      
-      <form id="form-mission" onsubmit="handleFormSubmit(event, 'mission')">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="mission-name">Full Name</label>
-            <input type="text" id="mission-name" name="name" required placeholder="Your name" />
-          </div>
-          <div class="form-group">
-            <label for="mission-email">Email</label>
-            <input type="email" id="mission-email" name="email" required placeholder="you@example.com" />
-          </div>
-        </div>
-        
-        <div class="form-row">
-          <div class="form-group">
-            <label for="mission-role">Designation / Role</label>
-            <input type="text" id="mission-role" name="role" required placeholder="e.g. Investor, Smart City Lead" />
-          </div>
-          <div class="form-group">
-            <label for="mission-org">Company / Organization</label>
-            <input type="text" id="mission-org" name="organization" placeholder="e.g. Municipal Corp, VC Firm" />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="mission-phone">Phone <span class="optional">(Optional)</span></label>
-            <input type="tel" id="mission-phone" name="phone" placeholder="+91 XXXXX XXXXX" />
-          </div>
-          <div class="form-group">
-            <label for="mission-hear">How did you hear about us?</label>
-            <input type="text" id="mission-hear" name="referral" placeholder="e.g. LinkedIn, Twitter, Colleague" />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="mission-interests">What interests you about GreenWave AI?</label>
-          <textarea id="mission-interests" name="interests" rows="3" required placeholder="Tell us what caught your eye..."></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="mission-vision">Your thoughts / vision on solving traffic problems <span class="optional">(Optional)</span></label>
-          <textarea id="mission-vision" name="vision" rows="2" placeholder="What is your take on solving urban congestion?"></textarea>
-        </div>
-
-        <button type="submit" class="btn-primary form-submit-btn">Submit Request</button>
-      </form>
-      <div id="success-mission" class="form-success-message" style="display: none;">
-        <h3>Submission Received</h3>
-        <p>Thank you for your interest in GreenWave AI. The founders will review your details and connect shortly.</p>
-        <button class="btn-ghost" style="margin-top: 16px; width: 100%;" onclick="closeModal('mission')">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="index.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/showroom-canvas.js"></script>
+  <script src="js/terminal.js"></script>
 </body>
 </html>

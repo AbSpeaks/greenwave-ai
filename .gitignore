@@ -3,3 +3,17 @@ __pycache__/
 *.pyc
 .env
 .DS_Store
+.idea/
+.vscode/
+*.iml
+**/target/
+**/target/**
+**/target/classes/
+**/.env
+**/*.class
+**/bin/
+**/.factorypath
+**/.project
+**/.classpath
+**/.settings/
+showroom-landing-page/js/config.js
